@@ -1,4 +1,4 @@
-FROM golang:alpine AS deps
+FROM golang:alpine AS build
 
 RUN apk update --no-cache && apk add git
 WORKDIR /app
