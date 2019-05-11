@@ -7,7 +7,18 @@ pool:
 
 steps:
 - task: Docker@2
+  displayName: Login to dockerhub
+  inputs:
+    command: login
+    containerRegistry: dockerhub
+- task: Docker@2
   displayName: Build
   inputs:
     command: build
+    repository: pnyak/azuretest
     tags: test1
+- task: Docker@2
+  displayName: Logout of dockerhub
+  inputs:
+    command: logout
+    containerRegistry: dockerhub
