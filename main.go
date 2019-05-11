@@ -12,8 +12,7 @@ func main() {
 
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", helloWorld)
-	router.HandleFunc("/", helloWorld)
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(":8000", router))
 }
 
 func helloWorld(w http.ResponseWriter, r *http.Request) {
